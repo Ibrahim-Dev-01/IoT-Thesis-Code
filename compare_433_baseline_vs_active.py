@@ -8,15 +8,15 @@ fs = 2e6
 lo = 433.925e6
 
 baseline_files = [
-    "D:\\GNU Radio recordings\\433 mhz\\baseline_433_LO433.925M_sr2M_gain30_5m_run01.cfile",
-    "D:\\GNU Radio recordings\\433 mhz\\baseline_433_LO433.925M_sr2M_gain30_5m_run02.cfile",
-    "D:\\GNU Radio recordings\\433 mhz\\baseline_433_LO433.925M_sr2M_gain30_5m_run03.cfile",
+    "D:\\GNU Radio recordings\\Spesific Baseline Testing\\Baseline\\433 mhz\\baseline_433_LO433.925M_sr2M_gain30_5m_run01.cfile",
+    "D:\\GNU Radio recordings\\Spesific Baseline Testing\\Baseline\\433 mhz\\baseline_433_LO433.925M_sr2M_gain30_5m_run02.cfile",
+    "D:\\GNU Radio recordings\\Spesific Baseline Testing\\Baseline\\433 mhz\\baseline_433_LO433.925M_sr2M_gain30_5m_run03.cfile",
 ]
 
 active_files = [
-    "D:\\GNU Radio recordings\\433 mhz testing\\433_active_LO433.925M_sr2M_gain30_60s_run01.cfile",
-    "D:\\GNU Radio recordings\\433 mhz testing\\433_active_LO433.925M_sr2M_gain30_60s_run02.cfile",
-    "D:\\GNU Radio recordings\\433 mhz testing\\433_active_LO433.925M_sr2M_gain30_60s_run03.cfile",
+    "D:\\GNU Radio recordings\\Spesific Baseline Testing\\Testing\\433 mhz testing\\433_active_LO433.925M_sr2M_gain30_60s_run01.cfile",
+    "D:\\GNU Radio recordings\\Spesific Baseline Testing\\Testing\\433 mhz testing\\433_active_LO433.925M_sr2M_gain30_60s_run02.cfile",
+    "D:\\GNU Radio recordings\\Spesific Baseline Testing\\Testing\\433 mhz testing\\433_active_LO433.925M_sr2M_gain30_60s_run03.cfile",
 ]
 
 # Use subsets for speed (still representative)
@@ -56,7 +56,7 @@ base_db = 10*np.log10(P_base + 1e-12)
 act_db  = 10*np.log10(P_act  + 1e-12)
 delta_db = act_db - base_db
 
-# ====== Plot 1: PSD overlay ======
+# Plot 1: PSD overlay 
 plt.figure(figsize=(10,5))
 plt.plot(f_mhz, base_db, label="Baseline (avg)")
 plt.plot(f_mhz, act_db,  label="Active Nexa (avg)", alpha=0.9)
@@ -69,7 +69,7 @@ plt.tight_layout()
 plt.savefig("433_psd_overlay.png", dpi=200)
 plt.close()
 
-# ====== Plot 2: Delta PSD ======
+# Plot 2: Delta PSD (Active - Baseline)
 plt.figure(figsize=(10,5))
 plt.plot(f_mhz, delta_db)
 plt.xlabel("Frequency (MHz)")
@@ -83,7 +83,7 @@ plt.close()
 print("Saved: 433_psd_overlay.png")
 print("Saved: 433_delta_psd.png")
 
-# ====== Plot 3: Time-domain power (show bursts) ======
+# Plot 3: Time-domain power (show bursts) 
 # Use run01 as an example (you can repeat for others)
 example_fn = active_files[0]
 x = np.fromfile(example_fn, dtype=np.complex64)

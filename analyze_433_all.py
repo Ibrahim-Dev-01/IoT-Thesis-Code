@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 from scipy.signal import welch
 
 files = [
-    "D:\\GNU Radio recordings\\baseline_433_LO433.925M_sr2M_gain30_5m_run01.cfile",
-    "D:\\GNU Radio recordings\\baseline_433_LO433.925M_sr2M_gain30_5m_run02.cfile",
-    "D:\\GNU Radio recordings\\baseline_433_LO433.925M_sr2M_gain30_5m_run03.cfile",
+    "D:\\GNU Radio recordings\\Spesific Baseline Testing\\Baseline\\433 mhz\\baseline_433_LO433.925M_sr2M_gain30_5m_run01.cfile",
+    "D:\\GNU Radio recordings\\Spesific Baseline Testing\\Baseline\\433 mhz\\baseline_433_LO433.925M_sr2M_gain30_5m_run02.cfile",
+    "D:\\GNU Radio recordings\\Spesific Baseline Testing\\Baseline\\433 mhz\\baseline_433_LO433.925M_sr2M_gain30_5m_run03.cfile",
 ]
 fs = 2e6
 lo = 433.925e6
